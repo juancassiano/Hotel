@@ -11,7 +11,7 @@ public class Quarto {
     private static int QUANTIDADE_DISPONIVEL = 10;
 
     private Long id;
-    private Boolean disponivel = true;
+    private Boolean disponivel = QUANTIDADE_DISPONIVEL > 0 ? true : false;
 
 
     public Quarto(Long id, Boolean disponivel) {
