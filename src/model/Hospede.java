@@ -4,7 +4,7 @@ import enumeration.Diaria;
 import enumeration.Itens;
 
 public class Hospede {
-    private Long id;
+    private Long cpf;
     private String nome;
     private Quarto quarto;
     private Long periodo;
@@ -14,43 +14,19 @@ public class Hospede {
     private Itens itens;
     private Diaria valorDia;
 
-    public Itens getItens() {
-        return itens;
-    }
-
-    public void setItens(Itens itens) {
-        this.itens = itens;
-    }
-
-    public Diaria getValorDia() {
-        return valorDia;
-    }
-
-    public void setValorDia(Diaria valorDia) {
-        this.valorDia = valorDia;
-    }
-
-    public Double getValorTotal() {
-        return valorTotal;
-    }
-
-    public void setValorTotal(Double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
-
-    public Hospede(Long id, String nome, Quarto quarto, Long periodo) {
-        this.id = id;
+    public Hospede(Long cpf, String nome, Quarto quarto, Long periodo) {
+        this.cpf = cpf;
         this.nome = nome;
         this.quarto = quarto;
         this.periodo = periodo;
     }
 
-    public Long getId() {
-        return id;
+    public Long getCpf() {
+        return cpf;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCpf(Long cpf) {
+        this.cpf = cpf;
     }
 
     public String getNome() {
@@ -75,5 +51,29 @@ public class Hospede {
 
     public void setPeriodo(Long periodo) {
         this.periodo = periodo;
+    }
+
+    public Itens getItens() {
+        return itens;
+    }
+
+    public void setItens(Itens itens) {
+        this.itens = itens;
+    }
+
+    public Diaria getValorDia() {
+        return valorDia;
+    }
+
+    public void setValorDia(Diaria valorDia) {
+        this.valorDia = valorDia;
+    }
+
+    public Double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(Double valorTotal) {
+        this.valorTotal = valorTotal;
     }
 }
