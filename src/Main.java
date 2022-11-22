@@ -1,11 +1,14 @@
 import enumeration.Diaria;
 import model.Hospede;
+import model.Quarto;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Hospede hospede = new Hospede();
+        Quarto quarto = new Quarto();
+
         Double valorTotal = 0.0;
 
         try(Scanner scanner = new Scanner(System.in)){
@@ -21,14 +24,14 @@ public class Main {
             System.out.println("O quarto seria para o senhor somente (0), com acompanhante (1), ou filho(a) (2) ?");
             int opcao = scanner.nextInt();
             if(opcao ==0){
-                hospede.setValorDia(Diaria.INDIVIDUAL);
+                quarto.setValorDia(Diaria.INDIVIDUAL);
             } else if (opcao ==1) {
-                hospede.setValorDia(Diaria.ACOMPANHANTE);
+                quarto.setValorDia(Diaria.ACOMPANHANTE);
             }else {
-                hospede.setValorDia(Diaria.CRIANCA);
+                quarto.setValorDia(Diaria.CRIANCA);
             }
             //calcular o valor da estadia = diaria X periodo
-            valorTotal = hospede.getValorDia() * periodoHospede;
+            valorTotal = quarto.getValorDia() * periodoHospede;
         }
     }
 }
