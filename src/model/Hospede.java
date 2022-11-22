@@ -14,7 +14,7 @@ public class Hospede {
     private Itens itens;
     private Diaria valorDia;
 
-    public Hospede(String cpf, String nome, Quarto quarto, Long periodo) {
+    public Hospede() {
         this.cpf = cpf;
         this.nome = nome;
         this.quarto = quarto;
