@@ -10,7 +10,7 @@ public class Quarto {
 
     private Integer QUANTIDADE_DISPONIVEL = 3;
 
-    private Long id;
+    private Integer id = 0;
     private Boolean disponivel;
     private Itens itens;
     private Diaria valorDia;
@@ -22,9 +22,10 @@ public class Quarto {
 
     private Double valorTotal;
 
-    public void checkIn(Hospede hospede, Boolean disponivel, Integer QUANTIDADE_DISPONIVEL){
+    public void checkIn(Hospede hospede, Boolean disponivel, Integer QUANTIDADE_DISPONIVEL, Integer id){
         this.disponivel = QUANTIDADE_DISPONIVEL > 0;
         QUANTIDADE_DISPONIVEL --;
+        this.id++;
     }
 
     public Double consumir(Itens itens){
@@ -35,7 +36,8 @@ public class Quarto {
         return this.valorEstadia = getValorEstadia() * periodo;
     }
 
-    public Double checkOut(Double valorConsumo, Double valorEstadia){
+    public Double checkOut(Double valorConsumo, Double valorEstadia, Integer QUANTIDADE_DISPONIVEL){
+        this.QUANTIDADE_DISPONIVEL++;
         return this.valorTotal = valorConsumo + valorEstadia;
     }
 
@@ -51,7 +53,7 @@ public class Quarto {
     public Quarto(){
 
     }
-    public Quarto(Long id, Integer periodo, Hospede hospede) {
+    public Quarto(Integer id, Integer periodo, Hospede hospede) {
         this.id = id;
         this.hospede = hospede;
         this.periodo = periodo;
@@ -113,11 +115,11 @@ public class Quarto {
         QUANTIDADE_DISPONIVEL = quantidadeDisponivel;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
