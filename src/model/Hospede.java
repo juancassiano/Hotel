@@ -4,7 +4,7 @@ import enumeration.Diaria;
 import enumeration.Itens;
 
 public class Hospede {
-    private Long cpf;
+    private String cpf;
     private String nome;
     private Quarto quarto;
     private Long periodo;
@@ -14,18 +14,18 @@ public class Hospede {
     private Itens itens;
     private Diaria valorDia;
 
-    public Hospede(Long cpf, String nome, Quarto quarto, Long periodo) {
+    public Hospede(String cpf, String nome, Quarto quarto, Long periodo) {
         this.cpf = cpf;
         this.nome = nome;
         this.quarto = quarto;
         this.periodo = periodo;
     }
 
-    public Long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(Long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
