@@ -22,8 +22,12 @@ public class Quarto {
 
     private Double valorTotal;
 
-    public void checkIn(Hospede hospede, Boolean disponivel, Integer QUANTIDADE_DISPONIVEL, Integer id){
+    public void checkIn(Hospede nomeHospede, Hospede cpfHospede, Boolean disponivel, Integer QUANTIDADE_DISPONIVEL, Integer id){
         this.disponivel = QUANTIDADE_DISPONIVEL > 0;
+        if(!this.disponivel){
+            throw new RuntimeException("Sinto muito! Estamos lotados");
+        }
+        this.setHospede(nomeHospede, cpfHospede);
         QUANTIDADE_DISPONIVEL --;
         this.id++;
     }

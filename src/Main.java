@@ -9,14 +9,14 @@ public class Main {
         Hospede hospede = new Hospede();
         Quarto quarto = new Quarto();
 
-        Double valorTotal = 0.0;
-
         try(Scanner scanner = new Scanner(System.in)){
             System.out.println("Digite seu nome:");
             String nomeHospede = scanner.nextLine();
 
             System.out.println("Digite seu cpf:");
             String cpfHospede = scanner.nextLine();
+
+            quarto.checkIn(nomeHospede);
 
             System.out.println("Quantos dias o(a) senhor(a) pretende ficar?");
             Long periodoHospede = scanner.nextLong();
